@@ -39,3 +39,15 @@
 
 (print (multiplyy-int -3 -10))
 
+(defun dvd (a b &optional (result a) (count 0))
+  (cond ((< result b) count)
+        ((= b 0) (print "you can not divide by zero!"))
+        (:else (dvd a b (minuss-int result b) (1+ count)))))
+
+(print (dvd 121 4))
+
+(defun buttner (a &optional (result 0))
+  (if (= a 0) result
+      (buttner (1- a) (pluss-int result a))))
+
+(print (buttner 100))

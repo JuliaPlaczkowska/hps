@@ -4,7 +4,7 @@
         (result x (* result result))
         (rest 1 (if (or (= n 1) (= (mod n 2) 0)) rest
                     (progn
-                      (setf n (if (= n 1) n (1- n)))
+                      (setf n (1- n))
                       (setf rest (* rest result))))))
   ((= n 1) (* result rest))
  (format t "~% result = ~d  rest = ~d n = ~d" result rest n)))

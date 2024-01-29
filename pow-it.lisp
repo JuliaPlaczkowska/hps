@@ -6,7 +6,7 @@
                     (progn
                       (setf n (if (= n 1) n (1- n)))
                       (setf rest (* rest result))))))
-  ((<= n 1) (* result rest))
+  ((= n 1) (* result rest))
  (format t "~% result = ~d  rest = ~d n = ~d" result rest n)))
 
 (defun pow-it (x n)

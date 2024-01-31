@@ -12,3 +12,14 @@
 (defun pow-it (x n)
   (if (= (mod n 2) 0) (pow-loop x n)   ; when n is even do x^n
       (* (pow-loop x (1- n)) x)))      ; when n is odd do (x^(n-1))*x
+
+; v2
+(defun power (x n)
+  (let ((result 1))
+    (loop while (> n 0)
+          do (progn
+               (when (= (mod n 2) 1)
+                 (setf result (* result x)))
+               (setf x (* x x))
+               (setf n (floor n 2))))
+    result))
